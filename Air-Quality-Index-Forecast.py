@@ -1,9 +1,3 @@
-"""
-AQI Forecast - End-to-End ML Pipeline
-Dataset: Based on UCI Air Quality Dataset structure (real-world features)
-Models: Random Forest + XGBoost with full pipeline
-"""
-
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -489,4 +483,5 @@ def aqi_label(v):
     return "Very Unhealthy / Hazardous 🟣"
 
 print(f"  Input: PM2.5=45.2 µg/m³, NO2=55.3 ppb, Temp=18.5°C, AQI_lag1=98")
-print(f"  Random Forest pr
+print(f"  Random Forest prediction: {rf_out:.1f} ({aqi_label(rf_out)})")
+print(f"  XGBoost prediction: {xgb_out:.1f} ({aqi_label(xgb_out)})")
